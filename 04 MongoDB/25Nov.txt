@@ -1,0 +1,137 @@
+TAHAP PREPARATION
+
+- bikin folder => c:/data/db
+
+KONFIGURASI AWAL
+- cd C:\Program Files\MongoDB\server\3.6\bin
+- mongod --dbpaath C:\data\db
+
+MENGAKTIFKAN SERVER (cmd for server)
+- cd C:\Program Files\MongoDB\server\3.6\bin
+- mongod
+
+MENGAKTIFKAN user
+- cd C:\Program Files\MongoDB\server\version\bin
+- mongo
+- show dbs
+
+kalau server : >> mongod
+kalau mau pake: >> mongo
+
+1. Menampilkan database
+    >> show db
+    >> show databases
+
+2. melihat posisi kerja database
+    >> db
+
+2. Membuat database
+    >> use tokoonline
+
+3. Membuat Collection
+   bukan table tapi collection
+    >> db.createCollection('pelapak');
+
+4. Menampilkan collections
+    >> show collections
+
+5. Menghapus collection
+    >> db.pelapak.drop()
+
+6. Menghapus database
+   pastikan sudah use namadabatase
+    >> db.dropDatabase()
+
+7. Memmbuat user
+    >> db.createUser({
+    user:"lintang",
+    pwd: '12345',
+    roles: ['dbAdmin', 'readWrite']
+    })
+
+8. Menampilkan user
+    >> show users
+    >> db.getUsers()
+    >> db.getUsers({showCredentials: true}) -- plus password user
+
+9. Memasukkan data dalam collection
+    >> db.seller.insert({nama: 'Andi', usia: 22})
+
+   memasukkan beberapa data sekaligus
+    >> db.seller.insert([
+    {nama: 'Budi', usia: 23},
+    {nama: 'Caca', usia: 24}
+    ])
+
+10. Membaca/membuka collection
+    >> db.seller.find()
+    >> db.seller.find().pretty()  -- supaya ditampilkan lebih rapi
+    >> db.seller.find({usia: 23}) -- cari data spesifik
+    >> db.seller.find(ObjectId("5ddb4f524320d7f599e9b31f")) -- cari data kalau tahu ObjectId-nya
+
+11. Menghapus data
+    >> db.seller.remove();
+    >> db.seller.remove({job: 'PNS'});
+
+12. Mengupdate data
+    >> db.seller.update(
+    {nama: 'Andi'},
+    {nama: 'Andi', kota: 'jakarta'})
+
+   Mengupdate data tertentu (hanya kota pada collection: 'Andi')
+    >> db.seller.update(
+    {nama: 'Andi'},
+    {$set: {kota:'cimahi'}});
+
+   Mengupdate untuk update properti baru
+    >> db.seller.update({nama: 'Andi'}, {$set:{job: 'PNS'}});
+
+   Mengupdate beberapa data sekaligus dg properti baru (nationality)
+    >> db.seller.updateMany({}, {$set: {nationality: 'Indonesia'}});
+
+13. Rename properti (mengganti properti 'nama' menjadi 'name')
+    >> db.seller.updateMany({}, {$rename: {'nama': 'name'}})
+
+14. Mencari data spesifik
+    >> db.seller.find(
+    {usia: {$gt: 23}})
+
+    catatan:
+    gt: greater than
+    lt: lower than
+    lte: lower than equal
+    gte: greater than equal
+    eq: equal
+
+    Mencari data spesifik menggunakan OR
+    >> db.seller.find({$or: [{name: 'Andi'}, {name: 'Caca'}]} ).pretty()
+
+    Mencari data spesifik menggunakan AND
+    >> db.seller.find({$and: [{nationality: 'Indonesia'},{usia:{$gte:25}}]}).pretty()
+
+    Memasukkan data yang kompleks
+    >> db.seller.insert({
+    nama: 'Euis', address: {
+    city: 'Cimahi', zipcode: '12345', gps: [
+    {lat: 123}, {long: 789}
+    ]}})
+
+15. Menampilkan dan mengurutkan data
+    >> db.seller.find().sort({usia: -1}) -- DESCENDING
+    >> db.seller.find().sort({usia: 1}) -- ASCENDING
+
+    mengurutkan berdasar usia DESC lalu name ASC dg batasan 2
+    >> db.seller.find().sort({usia: -1, name: 1}).limit(2);
+
+    menampilkan/mengurutkan 2 orang tertua, diurutkan berdasarkan usia, lalu nama
+    >> db.seller.find().sort({usia: -1, name: 1}).limit(2).pretty();
+
+16. Mengimpor data
+    >> C:\Program Files\MongoDB\Server\3.6\bin>mongoimport --db resto --collection resto --file restaurants.json --jsonArray
+
+17. Menghitung data
+    >> db.resto.find().count()
+
+Mencari data yang spesifik
+db.resto.find({name: "The Movable Feast"}, {name:1});
+

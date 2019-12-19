@@ -1,0 +1,15 @@
+1. Membuat database di MongoDB
+use pymongodb
+
+2. Membuat Collection di database
+db.createCollection('colmong')
+
+2. Mengisi Collection
+> db.colmong.insert([ 
+    {nama:'Andi', usia:19, kota:'Jakarta'}, 
+    {nama:'Budi', usia:25, kota:'Bandung'}, 
+    {nama:'Caca', usia:31, kota:'Bandung'}, 
+    ])
+
+3. Menginstall pymongo
+py -m pip install pymongo

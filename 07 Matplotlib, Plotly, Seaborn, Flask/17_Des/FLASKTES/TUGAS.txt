@@ -1,0 +1,11 @@
+1. Buat biodata data (cv) html => server Flask
+- Home
+- About
+- Education
+- Skills
+- Experiences
+
+2. INstruksi:
+- Web Scrapping dari Digidb 
+- buat flask responde (/table): HTML tabel data Digidb
+-                     (/json): JSON data digimon

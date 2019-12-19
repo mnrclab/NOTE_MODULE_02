@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e8b963886f014435a2b25ed81af484b1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_e8b963886f014435a2b25ed81af484b1" ></div>
+        
+</body>
+<script>    
+    
+            var map_e8b963886f014435a2b25ed81af484b1 = L.map(
+                "map_e8b963886f014435a2b25ed81af484b1",
+                {
+                    center: [-6.1754911, 106.8271729],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 17,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2ca25f8562bd4210ad3bd6d042753e9c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e8b963886f014435a2b25ed81af484b1);
+        
+    
+            var marker_f5cd8cd5c74049c887e4fe0a0828f4cb = L.marker(
+                [-6.1757511, 106.8275129],
+                {}
+            ).addTo(map_e8b963886f014435a2b25ed81af484b1);
+        
+    
+            var icon_8ed9bf6c6efb48f79b24131cafc31145 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cloud", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f5cd8cd5c74049c887e4fe0a0828f4cb.setIcon(icon_8ed9bf6c6efb48f79b24131cafc31145);
+        
+    
+        var popup_d0e6731e4c364a08a3cefb00907bd53f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_16bc3446df7b4b4bbdd65b30b5e37696 = $(`<div id="html_16bc3446df7b4b4bbdd65b30b5e37696" style="width: 100.0%; height: 100.0%;"><b>Monumen Nasional</b><br><small>Jakarta</small></div>`)[0];
+            popup_d0e6731e4c364a08a3cefb00907bd53f.setContent(html_16bc3446df7b4b4bbdd65b30b5e37696);
+        
+
+        marker_f5cd8cd5c74049c887e4fe0a0828f4cb.bindPopup(popup_d0e6731e4c364a08a3cefb00907bd53f)
+        ;
+
+        
+    
+    
+            marker_f5cd8cd5c74049c887e4fe0a0828f4cb.bindTooltip(
+                `<div>
+                     <i>Halo!</i>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_82df060d9d4b4375b42b6b5395dd84f8 = L.marker(
+                [-6.1757511, 106.8271129],
+                {}
+            ).addTo(map_e8b963886f014435a2b25ed81af484b1);
+        
+    
+            var icon_152f491ffdf745d3b103885df06550ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "user", "iconColor": "white", "markerColor": "pink", "prefix": "fa"}
+            );
+            marker_82df060d9d4b4375b42b6b5395dd84f8.setIcon(icon_152f491ffdf745d3b103885df06550ae);
+        
+    
+        var popup_c464007a3e74495c93c13c1317e68b12 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2f8fb5e1cd0f401e8910c456a4ce6a12 = $(`<div id="html_2f8fb5e1cd0f401e8910c456a4ce6a12" style="width: 100.0%; height: 100.0%;"><iframe width="560" height="315" src="https://www.youtube.com/embed/I5iRUDBNsyQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`)[0];
+            popup_c464007a3e74495c93c13c1317e68b12.setContent(html_2f8fb5e1cd0f401e8910c456a4ce6a12);
+        
+
+        marker_82df060d9d4b4375b42b6b5395dd84f8.bindPopup(popup_c464007a3e74495c93c13c1317e68b12)
+        ;
+
+        
+    
+    
+            marker_82df060d9d4b4375b42b6b5395dd84f8.bindTooltip(
+                `<div>
+                     <img width="100px" src="http://1.bp.blogspot.com/-hbJ8rUIcLoE/VcxVpO-J76I/AAAAAAAAAFA/TUVGXWlawBw/s1600/monas.jpg">
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_eb3d7dc5be004a83ab2a549ac512c6c2 = L.circle(
+                [-6.1754911, 106.8271729],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 200, "stroke": true, "weight": 3}
+            ).addTo(map_e8b963886f014435a2b25ed81af484b1);
+        
+</script>
